@@ -2,10 +2,9 @@
 A readiness probe is a Kubernetes concept used to determine whether a container in a pod is ready to accept traffic. This is part of Kubernetes' self-healing and scaling features, helping ensure that only healthy containers receive requests.
 
 How it works:
+
 Kubernetes uses the readiness probe to decide if a Pod should be part of the Service's endpoints.
-
 If the probe fails, the Pod is removed from the load balancer's target list until it passes again.
-
 This is different from a liveness probe, which determines if a container needs to be restarted.
 
 # Common Readiness Probe Types:
