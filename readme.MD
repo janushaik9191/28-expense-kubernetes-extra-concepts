@@ -53,20 +53,16 @@ livenessProbe:
 # Init Containers
   Init containers in Kubernetes are special containers that run before the main application containers in a Pod start. They're used for initialization tasks like setting up dependencies, configurations, or performing checks.
 
-# Key Features:
+Key Features:
 
-Run sequentially, one after another.
+1. Run sequentially, one after another.
+2. Each must succeed before the next starts.
+3. If any init container fails, Kubernetes will restart the pod (based on its restart policy).
 
-Each must succeed before the next starts.
+Common Use Cases:
 
-If any init container fails, Kubernetes will restart the pod (based on its restart policy).
-
-# Common Use Cases:
-Waiting for a service to become available (e.g., wait for a DB to be ready).
-
-Setting up configuration files or secrets.
-
-Data migrations or pre-processing before the app runs.
-
-Populating volumes shared with the main container.
+1. Waiting for a service to become available (e.g., wait for a DB to be ready).
+2. Setting up configuration files or secrets.
+3. Data migrations or pre-processing before the app runs.
+4. Populating volumes shared with the main container.
 
