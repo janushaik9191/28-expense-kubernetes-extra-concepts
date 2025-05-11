@@ -70,7 +70,9 @@ Common Use Cases:
 An application has mainly two segments one is application code and another is configuration,if code updated then image building is nessessary but coming to configuration we reduce one step by configuring configmap(no need to build image)
 
 steps to create:
-consider expense project frontend nginx has configuration
+
+consider expense project frontend has nginx configuration
 1. create a configmap for nginx configuration
 2. refer in pod definition 
-3. create volume mounts 
+3. create volumes
+4. create volume mounts 
