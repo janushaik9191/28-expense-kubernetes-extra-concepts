@@ -8,46 +8,48 @@ How it works:
 3. This is different from a liveness probe, which determines if a container needs to be restarted.
 
 # Common Readiness Probe Types:
-HTTP GET
-Kubernetes sends an HTTP request to the container:
+HTTP GET:
 
+Kubernetes sends an HTTP request to the container:
+```
 readinessProbe:
   httpGet:
     path: /health
     port: 8080
   initialDelaySeconds: 5
   periodSeconds: 10
+```
+TCP Socket:
 
-TCP Socket
 Kubernetes attempts to open a socket on the specified port:
-
+```
 readinessProbe:
   tcpSocket:
     port: 8080
   initialDelaySeconds: 5
   periodSeconds: 10
-
+```
 # Liveness probe
   A liveness probe in Kubernetes is used to check whether a container is still running properly. If the liveness probe fails, Kubernetes will restart the container, assuming it's in a bad state and can't recover on its own.
 
 # Common Liveness Probe Types:
-HTTP GET
-
+HTTP GET:
+```
 livenessProbe:
   httpGet:
     path: /health
     port: 8080
   initialDelaySeconds: 10
   periodSeconds: 10
-
-TCP Socket
-
+```
+TCP Socket:
+```
 livenessProbe:
   tcpSocket:
     port: 8080
   initialDelaySeconds: 10
   periodSeconds: 10
-
+```
 # Init Containers
   Init containers in Kubernetes are special containers that run before the main application containers in a Pod start. They're used for initialization tasks like setting up dependencies, configurations, or performing checks.
 
